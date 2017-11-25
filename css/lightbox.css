@@ -57,6 +57,10 @@
   box-shadow: 0 0 30px black;
 }
 
+.lightbox-image-container {
+  background-color: white;
+}
+
 .lightbox-image-title {
   position: absolute;
   box-sizing: border-box;
