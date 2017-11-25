@@ -14,6 +14,7 @@ class GalleryController {
       console.log(imageData);
       let imgEl = document.createElement('img');
       imgEl.src = imageData.url;
+      imgEl.onload = () => {imgEl.className += " fadeIn";};
       var galleryEl = 
           document.body.getElementsByClassName('gallery')[0];
       galleryEl.appendChild(imgEl);  

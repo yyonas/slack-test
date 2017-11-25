@@ -5,7 +5,15 @@
   margin: 5px 5px;
   display: inline-block;
   box-shadow: 0 0 10px black;
+  opacity: 0;
 }
+
+.gallery img.fadeIn {
+  opacity: 1;
+  transition: opacity .75s ease;
+}
+
+
 
 .gallery {
   display: flex;
