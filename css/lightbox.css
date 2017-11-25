@@ -1,0 +1,67 @@
+.lightbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0.9;
+  overflow: hidden;
+}
+
+.lightbox-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lightbox-previous, .lightbox-next {
+  color: white;
+  font-size: 50px;
+  opacity: .5;
+}
+
+.lightbox-previous:hover, .lightbox-next:hover {
+  opacity: 1;
+}
+
+
+.lightbox-previous {
+  margin-right: 25px;
+}
+
+.lightbox-next {
+  margin-left: 25px;
+}
+
+.lightbox-image-container img {
+  max-height:80vh;
+  max-width:80vw;
+  height:auto;
+  width:auto;
+  box-shadow: 0 0 30px black;
+
+}
+
+.lightbox-image-title {
+  position: absolute;
+  box-sizing: border-box;
+  padding-top: .5rem;
+  color: white;
+  font-size: 18px;
+}

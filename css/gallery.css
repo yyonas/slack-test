@@ -1,0 +1,19 @@
+.gallery img {
+  max-height:200px;
+  width:auto;
+  flex: 0 auto; 
+  margin: 5px 5px;
+  display: inline-block;
+  box-shadow: 0 0 10px black;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  flex-flow: row wrap;
+  align-content: space-evenly;
+  flex-grow: 1;
+  margin-top: 10px;
+}
+

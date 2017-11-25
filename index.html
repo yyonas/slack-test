@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="js/gallerycontroller.js"></script>  
+    <script src="js/galleryimagedata.js"></script>  
+    <script src="js/imageloader.js"></script>  
+    <script src="js/lightboxcontroller.js"></script>  
+
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css"/>
+    <link rel="stylesheet" href="css/gallery.css" type="text/css"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <script>
+      window.onload = function() {
+        // setup a wizards starting 5 list.
+        var wizardsStartingFive = [
+          'John Wall',
+          'Brad Beal',
+          'Kelly Oubre',
+          'Otto Porter Jr',
+          'Markieff Morris'
+        ];
+        var randWizard = wizardsStartingFive[
+          Math.floor(wizardsStartingFive.length * Math.random())
+        ];
+        var headerTitleEl = 
+           document.body.getElementsByClassName('header-title')[0];
+        headerTitleEl.innerHTML = randWizard;
+        var im = new ImageLoader(randWizard);
+        initializeUi = () => {
+          var imageDataList = im.imageDataList;
+          var lightboxController = new LightboxController(imageDataList);
+          var galleryController = new GalleryController(imageDataList, lightboxController);
+          galleryController.renderGallery();
+        };
+        
+        gapi.load('client', () => {im.loadImages(initializeUi);});
+      };
+
+    </script> 
+  </head>
+
+  <!-- The UI for the image gallery and lightbox.-->
+  <body>
+    <div class="header">
+      <img class="wizards-logo" src="http://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_500x500/was.png">
+      <div class="header-title"></div>
+    </div>
+
+    <div class="gallery"></div>
+    <div class="lightbox" style="display: none;">
+      <div class="lightbox-backdrop" > </div>
+      <div class="lightbox-container">
+        <div class="lightbox-previous"><</div>
+        <div class="lightbox-image-container">
+          <div class="lightbox-image">
+          </div>
+          <div class="lightbox-image-title"></div>
+        </div>
+        <div class="lightbox-next">></div>
+      </div>
+    </div>
+  </body>
+</html>
