@@ -11,7 +11,6 @@ class GalleryController {
   /* Renders the images in the gallery element. */
   renderGallery() {
     for (const imageData of this.imageDataList_) {
-      console.log(imageData);
       let imgEl = document.createElement('img');
       imgEl.src = imageData.url;
       imgEl.onload = () => {imgEl.className += " fadeIn";};
